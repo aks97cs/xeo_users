@@ -2,7 +2,7 @@
 
 ` Project Setup`
 ```
-Prerequisite;
+Prerequisite
 ```
 Install docker and docker-compose in your OS
 </br> 
@@ -19,6 +19,15 @@ please refere the <a href="https://docs.docker.com/engine/install/ubuntu/">Link<
     <li> To stop your project: Run <b>docker-compose down</b> </li>
  </ul>
 
+ ```
+ API Endpoint
+ ```
+ 1. 127.0.0.1:8000/user => GET
+ 2. 127.0.0.1:8000/user/ => POST
+ 3. 127.0.0.1:8000/user/user_id => PUT
+ 4. 127.0.0.1:8000/user/user_id => DELETE
+
+` API Specification` <a href="#comming-soon">DOC </a>
 ```
 Troubleshoot
 ```
@@ -36,5 +45,5 @@ now see the log in terminal
 
 </br>
 Anuj Kumar Singh</br>
-anuj.dev@hotmail.com
+anuj.dev@hotmail.com</br>
 Happy to help you !!
