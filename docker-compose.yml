@@ -9,7 +9,7 @@ services:
             - POSTGRES_DB=xeo_users
             - POSTGRES_USER=anuj
             - POSTGRES_PASSWORD=password
-    xeo_users:
+    xeo_web:
         build: .
         command: python manage.py runserver 0.0.0.0:8000
         volumes:
