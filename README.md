@@ -49,6 +49,18 @@ Or
 RUN: docker-compose down and then docker-compose up
 now see the log in terminal
 
+```buildoutcfg
+Building fixture from existing DB
+- docker-compose run xeo_web ./manage.py dumpdata app_name.model_name --indent 4 > service/fixture/users.json
+
+Loading fixture in db
+- docker-compose run xeo_web ./manage.py loaddata service/fixtures/users.json --app app.model_name
+
+```
+
+#### Command to run test
+` docker-compose run xeo_web ./manage.py test
+`
 
 </br>
 Anuj Kumar Singh</br>
