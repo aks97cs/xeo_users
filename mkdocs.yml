@@ -1,0 +1,7 @@
+site_name: User Microservice
+site_url: http://localhost:8001
+nav:
+    - Home: index.md
+    - About: about.md
+    - Reference: reference.md
+theme: readthedocs
