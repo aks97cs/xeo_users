@@ -6,10 +6,14 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 from django.http import Http404
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 
 
 class User(APIView):
     serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
 
     def get_obj(self, objId, model):
         try:
@@ -32,7 +36,6 @@ class User(APIView):
     
     def put(self, request, **kwargs):
         user = self.get_obj(kwargs.get('id', None), U_AUTH)
-        print(user)
         _serializer = self.serializer_class(user, data=request.data)
         if _serializer.is_valid():
             _serializer.save()
