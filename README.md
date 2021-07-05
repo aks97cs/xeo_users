@@ -62,6 +62,9 @@ Loading fixture in db
 ` docker-compose run xeo_web ./manage.py test
 `
 
+
+` prospector --uses django -o json service > temp/.prospector_history/a
+`
 </br>
 Anuj Kumar Singh</br>
 anuj.dev@hotmail.com</br>
