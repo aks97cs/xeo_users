@@ -1,7 +1,11 @@
 site_name: User Microservice
 site_url: http://localhost:8001
 nav:
-    - Home: index.md
+    - Welcome: index.md
+    - Development Life Cycle: sdlc.md
+    - Microservices: microservice.md
+    - Unit Testing: unit-testing.md
     - About: about.md
     - Reference: reference.md
-theme: readthedocs
+    - Thank-you: thank-you.md
+theme: material
