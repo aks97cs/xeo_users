@@ -1,5 +1,8 @@
 site_name: User Microservice
 site_url: http://localhost:8001
+repo_url: https://github.com/aks97cs/xeo_users
+site_author: Anuj Kumar Singh
+
 nav:
     - Welcome: index.md
     - Development Life Cycle: sdlc.md
@@ -8,4 +11,28 @@ nav:
     - About: about.md
     - Reference: reference.md
     - Thank-you: thank-you.md
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
 theme: material
+plugins:
+    - with-pdf:
+        author: Anuj Kumar Singh
+        copyright: Zenarate Inc
+        cover: true
+        back_cover: true
+        cover_title: Unit Testing
+        cover_subtitle: with microservices approach ..
+        custom_template_path: TEMPLATES PATH
+        exclude_pages:
+            - 'thank-you/'
+            - 'about/'
+
+        two_columns_level: 3
+
+
+        output_path: ./docs/document.pdf
+
+        debug_html: false
+        show_anchors: true
+        verbose: true

@@ -6,3 +6,4 @@
 - https://pre-commit.com/
 - https://pypi.org/project/prospector/
 - https://squidfunk.github.io/mkdocs-material/
+- https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes

@@ -5,7 +5,7 @@ SDLC is a process followed for a software project, within a software organizatio
 It consists of a detailed plan describing how to develop, maintain, replace and alter or enhance specific software. 
 The life cycle defines a methodology for improving the quality of software and the overall development process.
 
-![alt software development life cycle](https://www.tutorialspoint.com/sdlc/images/sdlc_stages.jpg)
+![alt software development life cycle](./img/s-d-l-c.png)
 <br/><small>software development life cycle</small>
 
 ## Testing the Product
