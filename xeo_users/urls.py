@@ -15,9 +15,32 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views import defaults as default_views
+from django.http import HttpResponse
+from django.core.exceptions import PermissionDenied
+
+
+def response_error_handler(request, exception=None):
+    html = """
+    <center>
+        <small style="background-color:#b491c8">You are not authorized to access this page !</small>
+    </center>
+    """
+    return HttpResponse(html, status=403)
+
+
+def permission_denied_view(request):
+    raise PermissionDenied
+
 
 urlpatterns = [
-    path('', include('service.urls')),
+    path('service/', include('service.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
 ]
+# default base url route
+urlpatterns += [
+    path('', permission_denied_view),
+]
+
+handler403 = response_error_handler
