@@ -9,5 +9,7 @@ class User(AbstractUser):
 
 class UserInfo(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='info')
+    user = models.OneToOneField(User, on_delete=models.CASCADE,
+                                related_name='info'
+                                )
     address = models.TextField()

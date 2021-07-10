@@ -6,5 +6,7 @@ repos:
     hooks:
     -   id: prospector
         exclude: "[a-zA-Z]*/(migrations)/(.)*"
-#        log_file: 1
+        args: ['--profile=profiles.yml', '--profile-path=.']
+        language: system
+
 

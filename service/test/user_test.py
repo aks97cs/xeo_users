@@ -53,11 +53,3 @@ class UserTest(APITestCase):
         client.credentials(HTTP_AUTHORIZATION='Token ' + response.json().get('token', False))
         client.put(url, format='json', data={'username': 'shivoham', 'password': 12345})
         self.assertEqual('shivoham', User.objects.get(pk=10).username)
-
-
-
-
-
-
-
-

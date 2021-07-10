@@ -22,7 +22,9 @@ from django.urls import path, include
 def response_error_handler(request, exception=None):
     html = """
     <center>
-        <small style="background-color:#b491c8">You are not authorized to access this page !</small>
+        <small style="background-color:#b491c8">
+            You are not authorized to access this page !
+        </small>
     </center>
     """
     return HttpResponse(html, status=403)

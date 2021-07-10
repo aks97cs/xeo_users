@@ -1,7 +1,7 @@
 output-format: json
 
 strictness: medium
-test-warnings: true
+test-warnings: false
 doc-warnings: false
 
 ignore-paths:
@@ -10,3 +10,27 @@ ignore-paths:
   - venv
   - site
   - temp
+
+uses:
+    - django
+pep8:
+  disable:
+    - E402
+    - max-line-length
+
+
+dodgy:
+  run: false
+mccabe:
+  run: false
+profile-validator:
+  run: false
+pyflakes:
+  run: false
+pylint:
+  disable:
+    - wrong-import-position
+    - import-outside-toplevel
+    - unused-argument
+    - unused-import
+
