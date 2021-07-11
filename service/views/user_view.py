@@ -1,18 +1,20 @@
 # User view
 from service.serializers import UserSerializer
-from django.contrib.auth.models import User as uAUTH
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 from django.http import Http404
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from django.contrib.auth import get_user_model
+uAUTH = get_user_model()
 
 
 class User(APIView):
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
 
     @staticmethod
     def get_obj(obj_id, model):
@@ -22,8 +24,8 @@ class User(APIView):
             raise Http404
 
     def get(self, request, **kwargs):
-        queryset = uAUTH.objects.all()
-        _serializer = self.serializer_class(queryset, many=True)
+        queryset = uAUTH.objects.get(pk=kwargs.get('id', None))
+        _serializer = self.serializer_class(queryset)
         return Response(_serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, **kwargs):

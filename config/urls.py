@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from django.urls import path, include
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 
 def response_error_handler(request, exception=None):
@@ -36,8 +40,9 @@ def permission_denied_view(request):
 
 urlpatterns = [
     path('service/', include('service.urls')),
-    path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
 # default base url route
 urlpatterns += [
