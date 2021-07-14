@@ -11,7 +11,7 @@ from datetime import timedelta
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 ROOT_DIR = (
-    environ.Path(__file__) - 3
+        environ.Path(__file__) - 3
 )
 
 ENV = environ.Env()
@@ -46,6 +46,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ]
 }
@@ -94,12 +97,12 @@ DATABASES = {
         'PASSWORD': ENV.str('PASSWORD'),
         'HOST': ENV.str('HOST'),
         'PORT': ENV.int('PORT'),
+        # 'ATOMIC_REQUESTS': True,
         'TEST': {
             'NAME': ENV.str('TEST_DB_NAME'),
         }
     }
 }
-
 
 LANGUAGE_CODE = 'en-us'
 

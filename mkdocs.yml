@@ -18,11 +18,11 @@ theme: material
 plugins:
     - with-pdf:
         author: Anuj Kumar Singh
-        copyright: Zenarate Inc
+        copyright: Open-book
         cover: true
         back_cover: true
         cover_title: Unit Testing
-        cover_subtitle: with microservices approach ..
+        cover_subtitle: with microservices approach
         custom_template_path: TEMPLATES PATH
         exclude_pages:
             - 'thank-you/'
