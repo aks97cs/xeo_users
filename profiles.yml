@@ -33,4 +33,5 @@ pylint:
     - import-outside-toplevel
     - unused-argument
     - unused-import
+    - arguments-differ
 
